@@ -1,0 +1,22 @@
+<%= form_with model: @product do |f| %>
+  <div class="p-4 flex flex-col text-base font-extralight text-gray-600 w-2/6">  
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"border border-blue-500 rounded-xl" %>
+
+    <%= f.label :body %>
+    <%= f.text_field :body, class:"border border-blue-500 rounded-xl" %>
+
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, class:"border border-blue-500 rounded-xl" %>
+
+    <%= f.label :price %>
+    <%= f.number_field :price, class:"border border-blue-500 rounded-xl mb-4" %>
+
+    <%= f.select 'category_id', options_for_select(@categories.collect{ |u| [u.title, u.id] }) %>
+
+    <%= f.submit "Save", class:"bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-xl mt-4 hover:text-gray-900" %>
+
+  </div>
+<% end %>
+
